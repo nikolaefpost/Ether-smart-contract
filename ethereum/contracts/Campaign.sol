@@ -1,14 +1,14 @@
 pragma solidity ^0.8.18;
 
-contract CampaignFactory{
+contract CampaignFactory {
     address [] public deployedCampaigns;
 
-    function createCampaign(uint minimum) public  {
+    function createCampaign(uint minimum) public {
         address newCampaignAddress = address(new Campaign(minimum, msg.sender));
         deployedCampaigns.push(newCampaignAddress);
     }
 
-    function getDeployedCampaign() public view returns  (address[] memory)   {
+    function getDeployedCampaign() public view returns (address[] memory)   {
         return deployedCampaigns;
     }
 }
@@ -66,12 +66,26 @@ contract Campaign {
         request.approvalCount++;
     }
 
-    function finalizeRequest(uint index)  public  {
+    function finalizeRequest(uint index) public {
         Request storage request = requests[index];
-        require(request.approvalCount > (approversCount/2));
+        require(request.approvalCount > (approversCount / 2));
         require(!request.complete);
 
         request.recipient.transfer(request.value);
         request.complete = true;
+    }
+
+    function getSummary() public view returns (uint, uint, uint, uint, address)  {
+        return (
+        minimumContribution,
+        address(this).balance,
+        requests.length,
+        approversCount,
+        manager
+        );
+    }
+
+    function getRequestCount() public view returns (uint)  {
+        return requests.length;
     }
 }

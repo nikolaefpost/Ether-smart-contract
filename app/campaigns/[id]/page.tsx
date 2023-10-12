@@ -68,7 +68,7 @@ const Campaign: NextPage<CampaignTypeProps> = async ({ params: { id } }) => {
 
           <div className="px-3 grid gap-4 grid-cols-2 mb-5">
             {items.map((item)=>(
-              <CampaignCardDetails {...item} key={item}/>
+              <CampaignCardDetails {...item} key={item.header}/>
             ))}
           </div>
           <Link href={requestsUrl}  className="ml-3  px-4 py-2 bg-cyan-600 text-white rounded-md">

@@ -2,7 +2,9 @@ import CampaignCard from "./campaignCard/CampaignCards";
 import AddCampaign from "./addCampaign/AddCampaign";
 import Header from "./header/Header";
 import CampaignCardDetails from "./campaignCardDetails/CampaignCardDetails";
-import ContributeForm from "./contributeForm/ContributeForm"
+import ContributeForm from "./contributeForm/ContributeForm";
+import RequestsCard from "./requestsCard/RequestsCard";
+import AddRequest from "./addRequest/AddRequest";
 
 
-export { CampaignCard, AddCampaign, Header, CampaignCardDetails, ContributeForm }
+export { CampaignCard, AddCampaign, Header, CampaignCardDetails, ContributeForm, RequestsCard, AddRequest }

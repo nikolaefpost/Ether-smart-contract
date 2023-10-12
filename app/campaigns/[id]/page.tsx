@@ -1,16 +1,12 @@
-import React, { FC } from "react";
+import React from "react";
 import GetCampaign from "../../../ethereum/campaign";
 import { NextPage } from "next";
 import web3 from "../../../ethereum/web3.js";
 import { CampaignCardDetails, ContributeForm } from "../../../components";
+import Link from "next/link";
+import { CampaignTypeProps } from "../../../types";
 
 
-
-type CampaignTypeProps = {
-  params: {
-    id: string
-  }
-}
 
 const fetchData = async (address: string) => {
   const campaign = GetCampaign(address);
@@ -34,7 +30,7 @@ const Campaign: NextPage<CampaignTypeProps> = async ({ params: { id } }) => {
     manager
   } = await fetchData(id);
 
-
+  const requestsUrl = `/campaigns/${id}/requests`;
 
   const items = [
     {
@@ -70,17 +66,17 @@ const Campaign: NextPage<CampaignTypeProps> = async ({ params: { id } }) => {
             <p>The manager created this campaign and can create requests to withdraw money</p>
           </div>
 
-          <div className="px-3 grid gap-4 grid-cols-2">
-            {items.map((item, index)=>(
+          <div className="px-3 grid gap-4 grid-cols-2 mb-5">
+            {items.map((item)=>(
               <CampaignCardDetails {...item} key={item}/>
             ))}
           </div>
-          <button className="ml-3 mt-3 px-4 py-2 bg-cyan-600 text-white rounded-md">
+          <Link href={requestsUrl}  className="ml-3  px-4 py-2 bg-cyan-600 text-white rounded-md">
             View Requests
-          </button>
+          </Link>
         </div>
 
-        <ContributeForm/>
+        <ContributeForm address={id}/>
       </div>
     </>
   );

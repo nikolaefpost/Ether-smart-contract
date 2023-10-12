@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, CSSProperties, useEffect } from "react";
+import React, { useState, CSSProperties } from "react";
 import factory from "../../ethereum/factory";
 import web3 from "../../ethereum/web3";
 import { HashLoader } from "react-spinners";
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 const override: CSSProperties = {
   display: "block",

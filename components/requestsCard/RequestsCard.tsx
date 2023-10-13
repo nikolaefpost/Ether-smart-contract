@@ -25,7 +25,6 @@ const RequestsCard: FC<requestI> = (
     finalize,
     address
   }) => {
-  console.log(finalize);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const approveRequest = async () => {
@@ -64,13 +63,13 @@ const RequestsCard: FC<requestI> = (
   return (<>
       <div
         onClick={()=>setErrorMessage("")}
-        className={cn("flex mt-2 relative",
+        className={cn("flex mt-2 relative text-xs md:text-base",
           { ["text-green-600"]: (!finalize && ableFinalize) }, { ["text-slate-300"]: finalize })}
       >
         <div className="w-[3%] border-r">{id}</div>
         <div className="w-[23%] flex items-center pl-1 border-r ">{description}</div>
         <div className="w-[10%] border-r flex items-center justify-center ">{amount}</div>
-        <div className="w-[25%] text-center pl-1 truncate border-r">{recipient}</div>
+        <div className="w-[25%] text-center pl-1 truncate border-r align-bottom">{recipient}</div>
         <div className="w-[18%] flex items-center  justify-center border-r">{approvalCount}</div>
         <div className="w-[10%] border-r align-middle px-1">
           {!finalize ?

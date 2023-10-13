@@ -47,7 +47,7 @@ const AddRequest: FC<IAddRequest> = ({address}) => {
   };
 
   return (
-    <form className="w-[50%] mx-auto mt-4 relative" onSubmit={onSubmit}>
+    <form className="w-full sm:w-[50%] mx-auto mt-4 relative" onSubmit={onSubmit}>
       <div>
         <label>Description</label>
         <input

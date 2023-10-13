@@ -10,7 +10,7 @@ import Link from "next/link";
 const NewRequest: NextPage<CampaignTypeProps> = ({ params: { id } }) => {
 
   return (
-    <div className="pt-4 pl-4 pr-8">
+    <div className="pt-4 px-4 ">
       <div className="flex justify-between items-start">
         <h2 className=" text-2xl text-cyan-600 font-bold">Create a Request</h2>
         <Link

@@ -43,7 +43,7 @@ const Requests: NextPage<CampaignTypeProps> = async ({ params: { id } }) => {
   const { req } = await fetchData(id);
 
   return (
-    <div className="pt-4 pl-4 pr-8">
+    <div className="pt-4 px-1 sm:px-4">
       <div className="flex justify-between items-start">
         <h2 className=" text-2xl text-cyan-600 font-bold">Requests</h2>
         <Link

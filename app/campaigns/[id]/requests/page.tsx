@@ -5,6 +5,7 @@ import { NextPage } from "next";
 import { CampaignTypeProps } from "../../../../types";
 import GetCampaign from "../../../../ethereum/campaign";
 import web3 from "../../../../ethereum/web3";
+import HeaderRequestCard from "../../../../components/requestsCard/HeaderRequestCard";
 
 const headerRequest = {
   id: "ID",
@@ -53,7 +54,7 @@ const Requests: NextPage<CampaignTypeProps> = async ({ params: { id } }) => {
       </div>
       <div className="pt-5">
         {req.length}
-        <RequestsCard {...headerRequest} isHeader={true} address={id.toString()} />
+        <HeaderRequestCard {...headerRequest}   />
         {req.map((el) => (
           <RequestsCard {...el} address={id} />
         ))}

@@ -15,16 +15,25 @@ export interface IContributeForm {
     address: string;
 }
 
-export interface headerRequest {
+export interface requestI {
+    id: number;
+    description: string;
+    amount: number;
+    recipient: string;
+    approvalCount: string;
+    approve?: number;
+    finalize?: boolean;
+    address: string;
+}
+
+export interface headerRequestI {
     id: string;
     description: string;
     amount: string;
     recipient: string;
     approvalCount: string;
-    approve?: string;
-    finalize?: string;
-    isHeader?: boolean;
-    address: string;
+    approve: string;
+    finalize: string;
 }
 
 export interface CampaignTypeProps  {

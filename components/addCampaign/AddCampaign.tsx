@@ -37,10 +37,10 @@ const AddCampaign = () => {
   };
   return (
     <form
-      className="flex justify-center items-center "
+      className="flex justify-center items-center gap-x-2 flex-wrap sm:flex-nowrap"
       onSubmit={onSubmit}
     >
-      <div className="basis-3/4 relative pt-6">
+      <div className="basis-full sm:basis-3/4 relative pt-6">
         {!errorMessage && <span className="absolute left-0 top-0">Minimum Contribution</span>}
         {errorMessage && <span className="absolute right-0 top-0 text-pink-500 text-xs">{errorMessage}</span>}
         <input
@@ -56,9 +56,9 @@ const AddCampaign = () => {
         />
 
       </div>
-      <div className="basis-1/4 flex justify-center h-full pt-6">
+      <div className="basis-full sm:basis-1/4 flex justify-center h-full pt-6">
         <button disabled={loading} type="submit"
-                className="bg-cyan-600 text-white rounded-md h-[40px] w-[80px] flex justify-center items-center">Create!
+                className="bg-cyan-600 text-white rounded-md h-[40px] w-full flex justify-center items-center">Create!
         </button>
       </div>
 

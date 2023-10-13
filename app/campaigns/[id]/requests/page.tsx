@@ -52,7 +52,7 @@ const Requests: NextPage<CampaignTypeProps> = async ({ params: { id } }) => {
         >Add Request</Link>
 
       </div>
-      <div className="pt-5">
+      <div className="pt-5 overflow-x-auto">
         {req.length}
         <HeaderRequestCard {...headerRequest}   />
         {req.map((el) => (

@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import cn from "classnames";
 import { headerRequestI } from "../../types";
 
 
@@ -15,8 +14,7 @@ const HeaderRequestCard: FC<headerRequestI> = (
   }) => {
   return (
     <div
-      className="flex mt-2  pb-2 border-b text-inherit"
-    >
+      className="flex mt-2  pb-2 border-b text-inherit overflow-x-auto">
       <div className="w-[3%] border-r">{id}</div>
       <div className="w-[23%] flex items-center pl-1 border-r ">{description}</div>
       <div className="w-[10%] border-r flex items-center justify-center ">{amount}</div>

@@ -35,7 +35,7 @@ const ContributeForm: FC<IContributeForm> = ({ address }) => {
     }
   };
   return (
-    <div className="basis-2/5 pr-3">
+    <div className="basis-2/5 px-3">
       <h3 className="text-xl">Contribute to this campaign!</h3>
       <form className="flex py-3 gap-4 flex-col sm:flex-row relative" onSubmit={onSubmit}>
         <div className="flex-1 border border-cyan-600 rounded-md flex">

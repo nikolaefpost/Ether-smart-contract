@@ -53,7 +53,7 @@ const Requests: NextPage<CampaignTypeProps> = async ({ params: { id } }) => {
       </div>
       <div className="pt-5">
         {req.length}
-        <RequestsCard {...headerRequest} isHeader={true} address={id} />
+        <RequestsCard {...headerRequest} isHeader={true} address={id.toString()} />
         {req.map((el) => (
           <RequestsCard {...el} address={id} />
         ))}
